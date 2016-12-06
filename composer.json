@@ -1,16 +1,15 @@
 {
     "name": "imohammadd/kavenegar",
-    "description": "KaveNegar.com webservice",
-    "license": "mit",
+    "description": "KaveNegar.com webservice for Laravel",
+    "keywords": ["kavenegar", "sms", "iran", "laravel", "mtn", "irancell", "mci", "ir-mci"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Mohammad Mohammadi",
             "email": "imohammadd@gmail.com"
         }
     ],
-    "require": {
-        "php": ">=5.5.9"
-    },
+    "require": {},
     "autoload": {
         "psr-4": {
             "iMohammadd\\KaveNegar\\": "src/"
