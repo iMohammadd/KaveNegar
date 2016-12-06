@@ -1,0 +1,21 @@
+{
+    "name": "imohammadd/kavenegar",
+    "description": "KaveNegar.com webservice",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Mohammad Mohammadi",
+            "email": "imohammadd@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "iMohammadd\\KaveNegar\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
