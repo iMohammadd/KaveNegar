@@ -19,7 +19,7 @@ Add `provider` in `config/app.php`
 Step 3:
 Run this command:
 ```
-php artisan vendor:publish --provider="iMohammadd/KaveNegar/KaveNegarServiceProvider"
+php artisan vendor:publish
 ```
 
 Configuration file is placed in `config/kavenegar.php` , open it and enter your kavenegar.com api token
