@@ -59,20 +59,19 @@ public function sms(SMS $sms)
     
     
     ** make call **
-    public function call(){
+public function call(){
    try {
-				$api      = new KavenegarApi( '736966775378635442563233334877495872526247413D3D' );
-				$receptor = $mobile;
-				$message  = "call message";
-				$date     = "";
-				$localid  = "";
-				$result   = $api->CallMakeTTS( $receptor , $message , $date , $localid );
-                
+	$api      = new KavenegarApi( '736966775378635442563233334877495872526247413D3D' );
+	$receptor = $mobile;
+	$message  = "call message";
+	$date     = "";
+	$localid  = "";
+	$result   = $api->CallMakeTTS( $receptor , $message , $date , $localid );    
         }
-        catch ( HttpException $e ) {
-				echo $e->errorMessage();
-			}
-            }
+    catch ( HttpException $e ) {
+	echo $e->errorMessage();
+	}
+ }
                 
 ```
 
