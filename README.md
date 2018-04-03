@@ -63,7 +63,7 @@ a basic example of make a call
   
 public function call(){
    try {
-	$api      = new KavenegarApi( '736966775378635442563233334877495872526247413D3D' );
+	$api      = new KavenegarApi( '736966********************************3D' );
 	$receptor = $mobile;
 	$message  = "call message";
 	$date     = "";
