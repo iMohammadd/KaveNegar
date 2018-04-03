@@ -79,4 +79,4 @@ public function call(){
 
 for more info see [Kavenegar.com Official Document](http://kavenegar.com/rest.html)
 
-[وب آذین](https:webazin.net)
+[وب آذین](https://webazin.net)
