@@ -12,7 +12,7 @@ Add `provider` in `config/app.php`
 ```
 'providers' => [
     ...
-    iMohammadd/KaveNegar/KaveNegarServiceProvider::class, //<--add this line at the end of provider array
+    iMohammadd\KaveNegar\KaveNegarServiceProvider::class, //<--add this line at the end of provider array
 ]
 ```
 
