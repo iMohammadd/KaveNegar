@@ -12,7 +12,7 @@ Add `provider` in `config/app.php`
 ```
 'providers' => [
     ...
-    iMohammadd\KaveNegar\KaveNegarServiceProvider::class, //<--add this line at the end of provider array
+    webazin\KaveNegar\KaveNegarServiceProvider::class, //<--add this line at the end of provider array
 ]
 ```
 
@@ -34,7 +34,7 @@ Configuration file is placed in `config/kavenegar.php` , open it and enter your 
 
 use the kavenegar class on your Controller:
 ```
-use iMohammadd/KaveNegar/SMS;
+use webazin/KaveNegar/SMS;
 ```
 
 a basic example of send a sms
