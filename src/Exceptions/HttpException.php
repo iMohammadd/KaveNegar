@@ -1,5 +1,5 @@
 <?php
-namespace iMohammadd\KaveNegar\Exceptions;
+namespace webazin\KaveNegar\Exceptions;
 
 class HttpException extends BaseException
 {
