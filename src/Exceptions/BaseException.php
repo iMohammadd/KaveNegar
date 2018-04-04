@@ -1,5 +1,5 @@
 <?php
-namespace iMohammadd\KaveNegar\Exceptions;
+namespace webazin\KaveNegar\Exceptions;
 
 use Symfony\Component\Process\Exception\RuntimeException;
 
