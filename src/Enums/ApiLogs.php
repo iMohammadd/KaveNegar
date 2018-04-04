@@ -1,5 +1,5 @@
 <?php
-namespace iMohammadd\KaveNegar\Enums;
+namespace webazin\KaveNegar\Enums;
 
 abstract class ApiLogs extends General {
     const  Justforfault  = "justforfault";
