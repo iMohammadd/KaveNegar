@@ -5,7 +5,7 @@
 Step 1:
 Run this command:
 ```
-composer require imohammadd/kavenegar
+composer require webazin/kavenegar
 ```
 Step 2:
 Add `provider` in `config/app.php`
