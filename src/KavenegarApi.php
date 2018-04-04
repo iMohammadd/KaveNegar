@@ -1,10 +1,10 @@
 <?php
-namespace iMohammadd\KaveNegar;
-use iMohammadd\Kavenegar\Exceptions\ApiException;
-use iMohammadd\Kavenegar\Exceptions\HttpException;
-use iMohammadd\Kavenegar\Exceptions\RuntimeException;
-use iMohammadd\Kavenegar\Enums\ApiLogs ;
-use iMohammadd\Kavenegar\Enums\General;
+namespace webazin\KaveNegar;
+use webazin\Kavenegar\Exceptions\ApiException;
+use webazin\Kavenegar\Exceptions\HttpException;
+use webazin\Kavenegar\Exceptions\RuntimeException;
+use webazin\Kavenegar\Enums\ApiLogs ;
+use webazin\Kavenegar\Enums\General;
 class KavenegarApi
 {
     protected $apiKey;
