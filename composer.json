@@ -1,12 +1,12 @@
 {
-    "name": "imohammadd/kavenegar",
+    "name": "webazin/kavenegar",
     "description": "KaveNegar.com webservice for Laravel",
     "keywords": ["kavenegar", "sms", "iran", "laravel", "mtn", "irancell", "mci", "ir-mci"],
     "license": "MIT",
     "authors": [
         {
             "name": "Mohammad Mohammadi",
-            "email": "imohammadd@gmail.com"
+            "email": "info@webazin.net"
         }
     ],
     "require": {},
