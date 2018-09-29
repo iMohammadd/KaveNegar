@@ -5,14 +5,14 @@
 Step 1:
 Run this command:
 ```
-composer require imohammadd/kavenegar
+composer require webazin/kavenegar
 ```
 Step 2:
 Add `provider` in `config/app.php`
 ```
 'providers' => [
     ...
-    iMohammadd/KaveNegar/KaveNegarServiceProvider::class, //<--add this line at the end of provider array
+    webazin\KaveNegar\KaveNegarServiceProvider::class, //<--add this line at the end of provider array
 ]
 ```
 
@@ -34,7 +34,7 @@ Configuration file is placed in `config/kavenegar.php` , open it and enter your 
 
 use the kavenegar class on your Controller:
 ```
-use iMohammadd/KaveNegar/SMS;
+use webazin/KaveNegar/SMS;
 ```
 
 a basic example of send a sms
@@ -56,6 +56,27 @@ public function sms(SMS $sms)
             return $e->errorMessage();
         }
     }
+    
+```
+a basic example of make a call
+```
+  
+public function call(){
+   try {
+	$api      = new KavenegarApi( '736966********************************3D' );
+	$receptor = $mobile;
+	$message  = "call message";
+	$date     = "";
+	$localid  = "";
+	$result   = $api->CallMakeTTS( $receptor , $message , $date , $localid );    
+        }
+    catch ( HttpException $e ) {
+	echo $e->errorMessage();
+	}
+ }
+                
 ```
 
 for more info see [Kavenegar.com Official Document](http://kavenegar.com/rest.html)
+
+[وب آذین](https://webazin.net)

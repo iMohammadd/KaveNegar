@@ -1,5 +1,5 @@
 <?php
-namespace iMohammadd\KaveNegar\Enums;
+namespace webazin\KaveNegar\Enums;
 
 abstract class General {
 	const  Enabled = "enabled";

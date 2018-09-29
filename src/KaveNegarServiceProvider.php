@@ -1,6 +1,6 @@
 <?php
 
-namespace iMohammadd\KaveNegar;
+namespace webazin\KaveNegar;
 
 use Illuminate\Support\ServiceProvider;
 

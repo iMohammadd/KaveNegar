@@ -1,18 +1,18 @@
 {
-    "name": "imohammadd/kavenegar",
+    "name": "webazin/kavenegar",
     "description": "KaveNegar.com webservice for Laravel",
     "keywords": ["kavenegar", "sms", "iran", "laravel", "mtn", "irancell", "mci", "ir-mci"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Mohammad Mohammadi",
-            "email": "imohammadd@gmail.com"
+            "name": "webazin.net",
+            "email": "info@webazin.net"
         }
     ],
     "require": {},
     "autoload": {
         "psr-4": {
-            "iMohammadd\\KaveNegar\\": "src/"
+            "webazin\\KaveNegar\\": "src/"
         }
     },
     "minimum-stability": "stable",

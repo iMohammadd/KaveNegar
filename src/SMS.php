@@ -1,17 +1,17 @@
 <?php
-namespace iMohammadd\KaveNegar;
+namespace webazin\KaveNegar;
 
-use iMohammadd\KaveNegar\Exceptions\BaseException;
-use iMohammadd\KaveNegar\Exceptions\HttpException;
-use iMohammadd\KaveNegar\Exceptions\ApiException;
-use iMohammadd\KaveNegar\Enums\General;
-use iMohammadd\KaveNegar\Enums\ApiLogs;
+use webazin\KaveNegar\Exceptions\BaseException;
+use webazin\KaveNegar\Exceptions\HttpException;
+use webazin\KaveNegar\Exceptions\ApiException;
+use webazin\KaveNegar\Enums\General;
+use webazin\KaveNegar\Enums\ApiLogs;
 
 class SMS
 {
     protected $apiKey;
     protected $debug;
-    const APIPATH = "http://api.kavenegar.com/v1/%s/%s/%s.json/";
+    const APIPATH = "https://api.kavenegar.com/v1/%s/%s/%s.json/";
     public function __construct()
     {
         if (!extension_loaded('curl')) {
