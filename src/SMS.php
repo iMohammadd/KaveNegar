@@ -11,7 +11,7 @@ class SMS
 {
     protected $apiKey;
     protected $debug;
-    const APIPATH = "http://api.kavenegar.com/v1/%s/%s/%s.json/";
+    const APIPATH = "https://api.kavenegar.com/v1/%s/%s/%s.json/";
     public function __construct()
     {
         if (!extension_loaded('curl')) {
