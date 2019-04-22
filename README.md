@@ -56,6 +56,22 @@ public function sms(SMS $sms)
             return $e->errorMessage();
         }
     }
+    
+    **make call**
+    
+    try
+    {
+				$api      = new KavenegarApi( '7369******************************************13D3D' );
+				$receptor = $mobile;
+				$message  = "message call";
+				$date     = "";
+				$localid  = "";
+				$result   = $api->CallMakeTTS( $receptor , $message , $date , $localid );
+     }
+     catch ( HttpException $e )
+     {
+				echo $e->errorMessage();
+	 }
 ```
 
 for more info see [Kavenegar.com Official Document](http://kavenegar.com/rest.html)
