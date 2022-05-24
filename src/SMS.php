@@ -11,7 +11,7 @@ class SMS
 {
     protected $apiKey;
     protected $debug;
-    const APIPATH = "https://api.kavenegar.com/v1/%s/%s/%s.json/";
+    const APIPATH = "http://api.kavenegar.com/v1/%s/%s/%s.json/";
     public function __construct()
     {
         if (!extension_loaded('curl')) {
@@ -25,15 +25,15 @@ class SMS
         $this->apiKey = config('kavenegar.apiKey');
         $this->debug  = config('kavenegar.debug');
     }
-    
+
     private function get_path($method, $base = 'sms')
     {
         return sprintf(self::APIPATH, $this->apiKey, $base, $method);
     }
-   
+
     private function execute($url, $data = null)
     {
-        
+
         $headers       = array(
             'Accept: application/json',
             'Content-Type: application/x-www-form-urlencoded',
@@ -46,7 +46,7 @@ class SMS
         if ($this->debug) {
             echo "[Request_param] : " . $fields_string . "\r\n";
         }
-        
+
         $handle = curl_init();
         curl_setopt($handle, CURLOPT_URL, $url);
         curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
@@ -55,7 +55,7 @@ class SMS
         curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($handle, CURLOPT_POST, true);
         curl_setopt($handle, CURLOPT_POSTFIELDS, $fields_string);
-        
+
         $response     = curl_exec($handle);
         $code         = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         $content_type = curl_getinfo($handle, CURLINFO_CONTENT_TYPE);
@@ -83,9 +83,9 @@ class SMS
             }
             return $json_response->entries;
         }
-        
+
     }
-    
+
     public function Send($receptor, $sender, $message, $date = null, $type = null, $localid = null)
     {
         if (is_array($receptor)) {
@@ -105,7 +105,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function SendArray($receptor, $sender, $message, $date = null, $type = null, $localmessageid = null)
     {
         if (!is_array($receptor)) {
@@ -135,7 +135,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function Status($messageid)
     {
         $path = $this->get_path("status");
@@ -143,9 +143,9 @@ class SMS
             "messageid" => is_array($messageid) ? implode(",", $messageid) : $messageid
         );
         return $this->execute($path,$params);
-        
+
     }
-    
+
     public function StatusLocalMessageid($localid)
     {
         $path = $this->get_path("statuslocalmessageid");
@@ -154,7 +154,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function Select($messageId)
     {
 		$params = array(
@@ -163,9 +163,9 @@ class SMS
         $path = $this->get_path("select");
         return $this->execute($path, $params);
 
-        
+
     }
-    
+
     public function SelectOutbox($startdate, $enddate, $sender)
     {
         $path   = $this->get_path("selectoutbox");
@@ -176,7 +176,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function LatestOutbox($pagesize, $sender)
     {
         $path   = $this->get_path("latestoutbox");
@@ -186,7 +186,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function CountOutbox($startdate, $enddate, $status = 0)
     {
         $path   = $this->get_path("countoutbox");
@@ -197,7 +197,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function Cancel($messageid)
     {
         $path = $this->get_path("cancel");
@@ -205,9 +205,9 @@ class SMS
             "messageid" => is_array($messageid) ? implode(",", $messageid) : $messageid
         );
         return $this->execute($path,$params);
-        
+
     }
-    
+
     public function Receive($linenumber, $isread = 0)
     {
         $path   = $this->get_path("receive");
@@ -217,7 +217,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function CountInbox($startdate, $enddate, $linenumber, $isread = 0)
     {
         $path   = $this->get_path("countinbox");
@@ -229,7 +229,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function CountPostalcode($postalcode)
     {
         $path   = $this->get_path("countpostalcode");
@@ -238,7 +238,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function SendbyPostalcode($postalcode, $sender, $message, $mcistartindex, $mcicount, $mtnstartindex, $mtncount, $date)
     {
         $path   = $this->get_path("sendbypostalcode");
@@ -254,13 +254,13 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function AccountInfo()
     {
         $path = $this->get_path("info", "account");
         return $this->execute($path);
-    } 
-    
+    }
+
     public function AccountConfig($apilogs, $dailyreport, $debug, $defaultsender, $mincreditalarm, $resendfailed)
     {
         $path   = $this->get_path("config", "account");
@@ -274,7 +274,7 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-    
+
     public function VerifyLookup($receptor, $token, $template)
     {
         $path   = $this->get_path("lookup", "verify");
@@ -285,5 +285,29 @@ class SMS
         );
         return $this->execute($path, $params);
     }
-      
+
+    public function VerifyLookup3($receptor, $token, $token2, $token3, $template)
+    {
+        $path   = $this->get_path("lookup", "verify");
+        $params = array(
+            "receptor" => $receptor,
+            "token" => $token,
+            "token2" => $token2,
+            "token3" => $token3,
+            "template" => $template
+        );
+        return $this->execute($path, $params);
+    }
+    public function VerifyLookup2($receptor, $token, $token2, $template)
+    {
+        $path   = $this->get_path("lookup", "verify");
+        $params = array(
+            "receptor" => $receptor,
+            "token" => $token,
+            "token2" => $token2,
+            "template" => $template
+        );
+        return $this->execute($path, $params);
+    }
+
 }
