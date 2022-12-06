@@ -61,14 +61,13 @@ public function sms(SMS $sms)
 a basic example of make a call
 ```
   
-public function call(){
+public function call(SMS $sms){
    try {
-	$api      = new KavenegarApi( '736966********************************3D' );
 	$receptor = $mobile;
 	$message  = "call message";
 	$date     = "";
 	$localid  = "";
-	$result   = $api->CallMakeTTS( $receptor , $message , $date , $localid );    
+	$result   = $sms->CallMakeTTS( $receptor , $message , $date , $localid );    
         }
     catch ( HttpException $e ) {
 	echo $e->errorMessage();
