@@ -286,26 +286,14 @@ class SMS
         return $this->execute($path, $params);
     }
 
-    public function VerifyLookup3($receptor, $token, $token2, $token3, $template)
+    public function CallMakeTTS($receptor, $message, $date = null, $localid = null)
     {
-        $path   = $this->get_path("lookup", "verify");
+        $path   = $this->get_path("maketts", "call");
         $params = array(
             "receptor" => $receptor,
-            "token" => $token,
-            "token2" => $token2,
-            "token3" => $token3,
-            "template" => $template
-        );
-        return $this->execute($path, $params);
-    }
-    public function VerifyLookup2($receptor, $token, $token2, $template)
-    {
-        $path   = $this->get_path("lookup", "verify");
-        $params = array(
-            "receptor" => $receptor,
-            "token" => $token,
-            "token2" => $token2,
-            "template" => $template
+            "message" => $message,
+            "date" => $date,
+            "localid" => $localid
         );
         return $this->execute($path, $params);
     }
