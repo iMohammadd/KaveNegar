@@ -15,6 +15,13 @@
             "webazin\\KaveNegar\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Webazin\\Kavenegar\\KaveNegarServiceProvider"
+          ]
+        }
+      },
     "minimum-stability": "stable",
     "prefer-stable": true
 }
